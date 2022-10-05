@@ -259,5 +259,12 @@ Remotes :
 Pushing :
 • Now that we have a remote setup, lets push local changes to remote repo Github. To do this we can run below :
 git push <remote-name> <branch> :-> • push code to remote.
-									• we need to specify remote-name we want to push upto and specific local branch we want to push up to that remote.
+									• we need to specify remote-name we want to push upto and specific local branch we want to push up to that remote.									
+example : 
+git push origin main :-> tells git to push up the main branch to our origin remote		
+
+
+git push <remote-name> <local-branch>:<remote-bracnch> :-> • push local branch upto remote branch.		
+example : 
+git push origin dev:main :-> push our local 'dev' branch changes upto remote branch 'main'.			
 =======================================================================================================================================================================================									

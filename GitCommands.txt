@@ -229,19 +229,19 @@ Which one to use ?
 git revert :-> creates a brand new commit which reverses/undo the changes from commit, because it results in new commit.
 =======================================================================================================================================================================================
 
-Cloning :
-• Often we want to get a local copy of an existing repo instead. To do this we can clone a remote repo hosted on Github.
-• All we need url that we can tell Git to clone for use.
-
-git clone <url> :-> git will retrieve all the files associated with the repo and copy them to local m/c.
-=======================================================================================================================================================================================
-
 Remotes :
 	Option 1:
-	Existing Repo : If you have already an existing repo locally that you want to get on Github
-					• Create a new repo on GitHub
-					• Connect your local repo(add a remote)
-					• Push up your changes to GitHub.
+	Existing Repo locally : If you have already an existing repo locally that you want to get on Github
+							• Create a new repo on GitHub.
+							• Connect your local repo(add a remote).
+							• Push up your changes to GitHub.
+    
+    Option 2:
+	Existing Repo remote :  If you have already an existing repo remotely that you want to get on local machine
+							• Create a new repo on GitHub.
+							• Clone it down to your local.
+							• Do some work.
+							• Push up your changes to GitHub.	
 					
 	Remote : • Before we can push anything to Github, we need to tell Git about our remote repo on Github.
 			 • We need to setup a destination to push up to.
@@ -257,6 +257,8 @@ Remotes :
 =======================================================================================================================================================================================
 
 Pushing :
+
+Option 1:
 • Now that we have a remote setup, lets push local changes to remote repo Github. To do this we can run below :
 git push <remote-name> <branch> :-> • push code to remote.
 									• we need to specify remote-name we want to push upto and specific local branch we want to push up to that remote.									
@@ -278,5 +280,11 @@ git push -u origin main :-> sets the upstream of the local main branch so that i
 example :
 git push -u origin main (first time)
 git push (second time...no need to use "git push origin main")
+
+
+Option 2:
+• Often we want to get a local copy of an existing repo instead. To do this we can clone a remote repo hosted on Github.
+• All we need url that we can tell Git to clone for use.
+git clone <repo-url> :-> git will retrieve all the files associated with the repo and copy them to local m/c.
 
 =======================================================================================================================================================================================									

@@ -288,3 +288,24 @@ Option 2:
 git clone <repo-url> :-> git will retrieve all the files associated with the repo and copy them to local m/c.
 
 =======================================================================================================================================================================================									
+
+Remote Branches :
+git branch -r :-> to view the remote branches our local repo knows about.
+
+example :
+run "git branch -r" and it gives below :
+origin/HEAD -> origin/main
+origin/main
+
+=======================================================================================================================================================================================
+
+Fetching :
+• It allows us to download changes from a remote repo, but these changes will not be automatically integrated in to our working files.
+• It lets you see what others have been working on, without having to merge those changes into our local repo.
+
+git fetch <remote-name> :-> • fetches branches and history from specific remote repo.
+							• it only updates remote tracking branches.
+
+example :
+git fetch origin :-> fetch all changes from origin remote repo.
+=======================================================================================================================================================================================				

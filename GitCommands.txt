@@ -264,7 +264,19 @@ example :
 git push origin main :-> tells git to push up the main branch to our origin remote		
 
 
-git push <remote-name> <local-branch>:<remote-bracnch> :-> • push local branch upto remote branch.		
+git push <remote-name> <local-branch>:<remote-branch> :-> • push local branch upto remote branch.		
 example : 
 git push origin dev:main :-> push our local 'dev' branch changes upto remote branch 'main'.			
+
+
+	-u option : 
+	• It allows to set the upstream of branch we are pushing. 
+	• Its just link connecting our local branch to branch on github.
+
+git push -u origin main :-> sets the upstream of the local main branch so that it tracks the main branch on the origin repo. 
+
+example :
+git push -u origin main (first time)
+git push (second time...no need to use "git push origin main")
+
 =======================================================================================================================================================================================									

@@ -149,7 +149,7 @@ viewing unstaged and staged changes :
 git diff HEAD :-> lists all the changes in working directory since your last commit.
 
 comparing branches :
-git diff branch1 bracnch2	
+git diff branch1 branch2	
 
 comparing commits :
 git diff commit1 commit2
@@ -309,3 +309,18 @@ git fetch <remote-name> :-> • fetches branches and history from specific remot
 example :
 git fetch origin :-> fetch all changes from origin remote repo.
 =======================================================================================================================================================================================				
+
+Pulling :
+• It is used to retrieve changes from remote repo.
+• Unlike fetch, pull actually updates our HEAD branch with whatever changes are retrieved from remote.
+
+git pull                =                         git fetch                               +                             git merge
+										   update the remote tracking branch                                   update my current branch with
+										   with latest changes from remote                                     whatever changes are on the remote
+										   repo.                                                               tracking branch.
+
+git pull <remote> <branch> :-> would fetch the latest code from remote branch and merge those changes into our current branch.		
+
+example :
+git pull origin main  :-> would fetch the latest code from origin's main branch and merge those changes into our current main branch.										   
+=======================================================================================================================================================================================

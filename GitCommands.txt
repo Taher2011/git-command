@@ -256,6 +256,8 @@ Which one to use ?
 • If you want to reverse commits that you haven't shared with others, use reset.
 	
 git revert :-> creates a brand new commit which reverses/undo the changes from commit, because it results in new commit.
+
+git revert <commitId>
 =======================================================================================================================================================================================
 
 Remotes :

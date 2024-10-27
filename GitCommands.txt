@@ -1,4 +1,59 @@
 Git Commands :---->
+=======================================================================================================================================================================================
+Pushing : To push your local Maven repository to GitHub, you'll need to first set up a Git repository, then add and push your project files to GitHub. 
+
+1. Create a GitHub Repository
+   Go to GitHub and log in.
+   Click on New to create a new repository.
+   Name your repository, add a description (optional), and choose whether to make it public or private.
+   Click Create repository.
+
+2. Initialize Git in Your Local Maven Project in your local project directory, open a terminal and run the following commands:
+ 
+   # Go to your Maven project directory
+   cd /path/to/your/maven/project
+
+   # Initialize a new Git repository
+   git init
+
+   # Add the remote repository (replace with your GitHub repository URL)
+   git remote add origin https://github.com/username/repository-name.git   
+
+3. Add and Commit Files
+ 
+   # Add all project files to staging
+   git add .
+
+   # Commit the files with a message
+   git commit -m "Initial commit"   
+
+4. Push to GitHub
+  
+   # Push the files to the main branch on GitHub
+   git push -u origin main   
+   
+Note1: If you have to specify git pull origin main every time, it’s likely because your local branch is not set to track the remote main branch. 
+	   By setting an upstream branch, you can simply use git pull without specifying origin main each time. To set the upstream branch for main, run this command:
+	   "git branch --set-upstream-to=origin/main main"
+	   After setting this, you should be able to use git pull without any additional arguments. This command establishes a tracking relationship between your local main branch and the remote origin/main branch,
+	   so Git knows which branch to pull from by default.
+	   
+Note2: "fatal: no commit on branch 'main' yet"  means that your local main branch doesn’t have any commits yet, which prevents it from tracking the remote branch. 
+	   Here’s how to resolve it:
+	   You need to make at least one commit to establish the branch's history.
+       Stage and commit any file (e.g., a README file):
+	   git add README.md
+	   git commit -m "Initial commit"
+	   Now you can set the upstream branch: "git branch --set-upstream-to=origin/main main"
+	   Then, you can pull from origin main: "git pull origin main --allow-unrelated-histories"
+	   
+Note3: The error "fatal: refusing to merge unrelated histories" occurs when Git tries to merge two branches that don't share a common commit history. 
+	   This can happen if your local repository was initialized separately from the remote repository, and they haven’t been connected before.	   
+	   To resolve this, you can allow Git to merge unrelated histories with the --allow-unrelated-histories flag:
+	   "git pull origin main --allow-unrelated-histories"
+	   This will force Git to merge the two histories, and you might be prompted to resolve any conflicts that arise. 
+	   Afterward, you can commit the merge and continue with your work.
+=======================================================================================================================================================================================									
 
 git config user.name  :-> returns the current username
 =======================================================================================================================================================================================
@@ -287,38 +342,6 @@ Remotes :
 	
 =======================================================================================================================================================================================
 
-Pushing :
-
-Option 1:
-• Now that we have a remote setup, lets push local changes to remote repo Github. To do this we can run below :
-git push <remote-name> <branch> :-> • push code to remote.
-									• we need to specify remote-name we want to push upto and specific local branch we want to push up to that remote.									
-example : 
-git push origin main :-> tells git to push up the main branch to our origin remote		
-
-
-git push <remote-name> <local-branch>:<remote-branch> :-> • push local branch upto remote branch.		
-example : 
-git push origin dev:main :-> push our local 'dev' branch changes upto remote branch 'main'.			
-
-
-	-u option : 
-	• It allows to set the upstream of branch we are pushing. 
-	• Its just link connecting our local branch to branch on github.
-
-git push -u origin main :-> sets the upstream of the local main branch so that it tracks the main branch on the origin repo. 
-
-example :
-git push -u origin main (first time)
-git push (second time...no need to use "git push origin main")
-
-
-Option 2:
-• Often we want to get a local copy of an existing repo instead. To do this we can clone a remote repo hosted on Github.
-• All we need url that we can tell Git to clone for use.
-git clone <repo-url> :-> git will retrieve all the files associated with the repo and copy them to local m/c.
-
-=======================================================================================================================================================================================									
 
 Remote Branches :
 git branch -r :-> to view the remote branches our local repo knows about.
